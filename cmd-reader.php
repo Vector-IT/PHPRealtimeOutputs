@@ -1,4 +1,4 @@
-<?php 
+<?php
 ini_set("log_errors", 1);
 ini_set("error_log", "php-error.log");
 
@@ -19,11 +19,10 @@ if (file_exists('cmd.txt')) {
 	$texto = '';
 	while ($linea = fgets($archivo)) {
 		$linea = mb_convert_encoding(trim($linea), 'CP1252');
-		// $linea = trim($linea);
 
 		if ($linea == "FIN") {
 			$I = 'FIN';
-		} 
+		}
 		else {
 			$I++;
 			$texto.= "\n<br>".$linea;
