@@ -1,0 +1,20 @@
+Fecha: 05/06/2021 18:24:01,00 
+
+Haciendo ping a www.google.com [172.217.172.100] con 32 bytes de datos:
+Respuesta desde 172.217.172.100: bytes=32 tiempo=21ms TTL=116
+Respuesta desde 172.217.172.100: bytes=32 tiempo=21ms TTL=116
+Respuesta desde 172.217.172.100: bytes=32 tiempo=22ms TTL=116
+Respuesta desde 172.217.172.100: bytes=32 tiempo=20ms TTL=116
+Respuesta desde 172.217.172.100: bytes=32 tiempo=20ms TTL=116
+Respuesta desde 172.217.172.100: bytes=32 tiempo=20ms TTL=116
+Respuesta desde 172.217.172.100: bytes=32 tiempo=21ms TTL=116
+Respuesta desde 172.217.172.100: bytes=32 tiempo=20ms TTL=116
+Respuesta desde 172.217.172.100: bytes=32 tiempo=20ms TTL=116
+Respuesta desde 172.217.172.100: bytes=32 tiempo=20ms TTL=116
+
+Estad¡sticas de ping para 172.217.172.100:
+    Paquetes: enviados = 10, recibidos = 10, perdidos = 0
+    (0% perdidos),
+Tiempos aproximados de ida y vuelta en milisegundos:
+    M¡nimo = 20ms, M ximo = 22ms, Media = 20ms
+FIN 

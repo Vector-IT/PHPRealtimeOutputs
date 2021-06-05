@@ -1,0 +1,15 @@
+{
+    "name": "vector-it/ejecutar_comando_obtener_salida_tiempo_real",
+    "description": "Script para ejecutar comandos de consola tanto en ambientes Windows como Linux y obtener la salida en tiempo real",
+    "type": "project",
+    "require": {
+        "php": "^7"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jose Maria Romero Cuny",
+            "email": "jose.romero@vector-it.com.ar"
+        }
+    ]
+}
