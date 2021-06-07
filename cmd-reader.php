@@ -3,9 +3,10 @@ ini_set("log_errors", 1);
 ini_set("error_log", "php-error.log");
 
 $index = $_REQUEST["index"];
+$archivo = $_REQUEST["archivo"];
 
-if (file_exists('cmd.txt')) {
-	$archivo = fopen('cmd.txt', 'r');
+if (file_exists($archivo)) {
+	$archivo = fopen($archivo, 'r');
 
 	if ($index > 0) {
 		for ($I = 0; $I < $index; $I++) {
@@ -27,10 +28,13 @@ if (file_exists('cmd.txt')) {
 			$I++;
 			$texto.= "\n<br>".$linea;
 		}
-
 	}
 
 	fclose($archivo);
+
+	if ($I == 'FIN') {
+		unlink($_REQUEST["archivo"]);
+	}
 
 	$resultado = [
 		"I" => $I,

@@ -7,37 +7,36 @@
 	<body>
 		<div>
 			<button id="btnEjecutar">Ejecutar</button>
-			<button id="btnFinalizar">Finalizar</button>
 		</div>
 		<div id="ontimeoutputArea" style="border: 1px solid red"></div>
 	</body>
-	
+
 	<script src="https://code.jquery.com/jquery-3.2.0.min.js" integrity="sha256-JAW99MJVpJBGcbzEuXk4Az05s/XyDdBomFqNlM3ic+I=" crossorigin="anonymous"></script>
 
 	<script type="text/javascript">
 		var I;
+		var archivo;
 		var tmrReader;
 		var leyendo = false;
 
 		$('#btnEjecutar').click(function() {
 			if (tmrReader != undefined) {
-				clearInterval(tmrReader);
+				$('#btnFinalizar').click();
 			}
 
 			I = 0;
 			leyendo = false;
 
-			$('#ontimeoutputArea').html('Ejecutando...<br>');
+			$('#ontimeoutputArea').html('Ejecutar comando!');
 
-			$.post("./cmd.php", {}, undefined, 'text');
+			$.post("./cmd.php").done(function (data) {
+				archivo = data;
 
-			tmrReader = setInterval(leer, 1000);
-		});
+				$('#ontimeoutputArea').append('<br>Archivo: ' + archivo + '<br>');
 
-		$('#btnFinalizar').click(function (e) { 
-			e.preventDefault();
-			
-			I = 'FIN';
+				tmrReader = setInterval(leer, 1000);
+			});
+
 		});
 
 		function leer() {
@@ -47,11 +46,11 @@
 			}
 			else if (!leyendo) {
 				leyendo = true;
-				$.get("./cmd-reader.php", { 'index': I })
+				$.get("./cmd-reader.php", { 'index': I, 'archivo': archivo })
 					.done(
 						function (data) {
 							I = data.I;
-							
+
 							$('#ontimeoutputArea').append(data.texto);
 
 							leyendo = false;
