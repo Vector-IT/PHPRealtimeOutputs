@@ -21,7 +21,7 @@
 
 		$('#btnEjecutar').click(function() {
 			if (tmrReader != undefined) {
-				$('#btnFinalizar').click();
+				I = 'FIN';
 			}
 
 			I = 0;
